@@ -11,7 +11,9 @@ let submitMove = (row, column, player) => {
     newBoard.push(row.split(' '));
   });
   newBoard[row][column] = player;
-  return newBoard;
+  newBoard = [].concat.apply([], newBoard);
+  board = newBoard;
+  return board;
 };
 submitMove(0, 0, player1);
 
